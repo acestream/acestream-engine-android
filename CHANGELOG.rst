@@ -1,3 +1,9 @@
+3.1.37.3
+--------
+
+* Fix issue with changing locale
+* Update translations
+
 3.1.37.2
 --------
 

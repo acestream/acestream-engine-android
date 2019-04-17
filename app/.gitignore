@@ -1,0 +1,9 @@
+/build/
+/armv7Regular/
+/armv7Atv/
+/x86Regular/
+/x86Atv/
+/universalRegular/
+/universalAtv/
+
+google-services.json

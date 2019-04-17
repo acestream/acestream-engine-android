@@ -1,0 +1,3 @@
+include ':libvlc', ':acestream-engine-android-core', ':connect-sdk', ':acestream-tif-provider', ':acestream-engine-client'
+include ':acestream-android-sdk'
+include ':app'

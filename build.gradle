@@ -1,0 +1,87 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.android_plugin_version = '3.3.2'
+    ext.kotlin_version = '1.3.21'
+    ext.kotlinx_version = '1.1.1'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$android_plugin_version"
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+
+        classpath 'com.google.gms:google-services:4.2.0'
+        classpath 'com.google.firebase:firebase-plugins:1.1.5'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        flatDir {
+            dirs project(':libvlc').file('libs')
+            dirs project(':acestream-engine-android-core').file('libs')
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    admobUseTestAds = "false"
+    admobUseTestDevices = "false"
+    appodealUseTestAds = "false"
+    enableDebugLogging = "false"
+    useTestBackend = "false"
+    allowExternalPlayers = "true"
+    playServicesVersion = '16.1.2'
+    playServicesAuthVersion = '16.0.1'
+    playServicesAdsVersion = '17.2.0'
+    constraintLayoutVersion = '1.1.3'
+    compileSdkVersion = 28
+    minSdkVersionRegular = 17
+    minSdkVersionAtv = 21
+    targetSdkVersion = 26
+
+    //
+    minSdkVersion = 17
+    androidxCoreVersion = '1.0.1'
+    androidxPreferencesVersion = '1.1.0-alpha04'
+    androidxVersion = '1.0.0'
+    androidxAnnotationVersion = '1.0.1'
+    androidxAppcompatVersion = '1.0.2'
+    archVersion = '2.0.0'
+    roomVersion = '2.0.0'
+    pagingVersion = '2.1.0'
+    junitVersion = '4.12'
+    retrofitVersion = '2.4.0'
+
+    // okhttp 3.12.0 has an issue: https://github.com/square/okhttp/issues/4395
+    // use 3.11.0 for now
+    okHttpVersion = '3.11.0'
+    //
+
+    versionName = '3.1.37.3'
+    versionCode = 301370300
+    //            MNNRRSSPA
+    // versionCode scheme is M NN RR A
+    // M:  Major version from 0 to 9 (engine)
+    // NN: Minor version from 00 to 99 (engine)
+    // RR: Micro version 1 from 00 to 99 (engine)
+    // SS: Micro version 2 from 00 to 99 (different java wrappers with the same engine)
+    // P:  App priority from 0 to 9 (1 - core, 2 - media)
+    // A:  ABI from 0 to 9
+    //     1 is ARMv7-A
+    //     2 is x86
+    //     9 is universal
+}

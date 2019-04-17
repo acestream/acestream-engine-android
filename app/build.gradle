@@ -1,0 +1,148 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        applicationId "org.acestream.core"
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        multiDexEnabled true
+
+        buildConfigField "boolean", "developerMode", "false"
+        buildConfigField "boolean", "skipServiceBind", "false"
+        buildConfigField "boolean", "enableDebugLogging", rootProject.ext.enableDebugLogging
+        buildConfigField "boolean", "allowExternalPlayers", rootProject.ext.allowExternalPlayers
+        buildConfigField "boolean", "useTestBackend", rootProject.ext.useTestBackend
+    }
+    signingConfigs {
+        release {
+            if (project.hasProperty('keyStoreFile')) {
+                storeFile file(project.findProperty('keyStoreFile'))
+                keyAlias project.findProperty('storealias')
+                storePassword project.findProperty('storePassword')
+                keyPassword project.findProperty('keyPassword')
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+//            minifyEnabled true
+//            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    flavorDimensions "arch", "target"
+    productFlavors {
+        regular {
+            dimension "target"
+            minSdkVersion rootProject.ext.minSdkVersionRegular
+        }
+        atv {
+            dimension "target"
+            minSdkVersion rootProject.ext.minSdkVersionAtv
+            applicationIdSuffix ".atv"
+        }
+        x86 {
+            dimension "arch"
+            versionCode 2
+            ndk {
+                abiFilter "x86"
+            }
+        }
+        armv7 {
+            dimension "arch"
+            versionCode 1
+            ndk {
+                abiFilter "armeabi-v7a"
+            }
+        }
+        universal {
+            dimension "arch"
+            versionCode 9
+            ndk {
+                abiFilters "x86", "armeabi-v7a"
+            }
+        }
+    }
+
+    sourceSets {
+        armv7 {
+            assets.srcDirs = ['flavors/armv7/assets']
+            jniLibs.srcDirs = ['flavors/armv7/jniLibs']
+        }
+        x86 {
+            assets.srcDirs = ['flavors/x86/assets']
+            jniLibs.srcDirs = ['flavors/x86/jniLibs']
+        }
+        universal {
+            assets.srcDirs = ['flavors/universal/assets']
+            jniLibs.srcDirs = ['flavors/universal/jniLibs']
+        }
+    }
+
+    applicationVariants.all { variant ->
+        def flavorArch = variant.productFlavors.get(0)
+        def flavorTarget = variant.productFlavors.get(1)
+        def mergedFlavor = variant.getMergedFlavor()
+
+        // Ad config should be placed in local gradle.properties (e.g. $HOME/.gradle/gradle.properties)
+        mergedFlavor.manifestPlaceholders = [
+            arch: flavorArch.name,
+            webClientId: getLocalProperty('WEB_CLIENT_ID', ''),
+            // use test app id as default, because admob crashes on start without app id
+            adMobAppId: getLocalProperty('adMobAppId_core_' + flavorTarget.name, "ca-app-pub-3940256099942544~3347511713"),
+            adMobBannerId: getLocalProperty('adMobBannerId_core_' + flavorTarget.name, ""),
+            adMobInterstitialPauseId: getLocalProperty('adMobInterstitialPauseId_core_' + flavorTarget.name, ""),
+            adMobInterstitialPrerollId: getLocalProperty('adMobInterstitialPrerollId_core_' + flavorTarget.name, ""),
+            adMobInterstitialCloseId: getLocalProperty('adMobInterstitialCloseId_core_' + flavorTarget.name, ""),
+            adMobRewardedVideoPrerollId: getLocalProperty('adMobRewardedVideoPrerollId_core_' + flavorTarget.name, ""),
+            adMobRewardedVideoMainId: getLocalProperty('adMobRewardedVideoMainId_core_' + flavorTarget.name, ""),
+            appodealAppKey: getLocalProperty('appodealAppKey_core_' + flavorTarget.name, ""),
+        ]
+
+        def generatedCode = defaultConfig.versionCode + 10 + flavorArch.versionCode
+
+        //Custom APK name
+        variant.outputs.all { output ->
+            def outputName = "AceStream"
+            if (flavorTarget.name == "atv") {
+                outputName += "ATV"
+            }
+            outputName += "Core"
+            outputName += "-" + defaultConfig.versionName + "-" + flavorArch.name + ".apk"
+            outputFileName = outputName
+
+            output.versionCodeOverride = generatedCode
+        }
+    }
+}
+
+dependencies {
+    implementation project(':acestream-engine-android-core')
+}
+
+apply plugin: 'com.google.gms.google-services'
+
+def getLocalProperty(name, defaultValue) {
+    if(project.hasProperty(name)) {
+        return project.getProperty(name)
+    }
+    else {
+        return defaultValue
+    }
+}

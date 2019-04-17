@@ -1,0 +1,15 @@
+[submodule "acestream-android-sdk"]
+	path = acestream-android-sdk
+	url = git@github.com:acestream/acestream-android-sdk.git
+[submodule "acestream-engine-client"]
+	path = acestream-engine-client
+	url = git@github.com:acestream/acestream-engine-client.git
+[submodule "acestream-tif-provider"]
+	path = acestream-tif-provider
+	url = git@github.com:acestream/acestream-tif-provider.git
+[submodule "connect-sdk"]
+	path = connect-sdk
+	url = git@github.com:acestream/connect-sdk.git
+[submodule "acestream-engine-android-core"]
+	path = acestream-engine-android-core
+	url = git@github.com:acestream/acestream-engine-android-core.git

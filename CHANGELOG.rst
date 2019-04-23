@@ -1,3 +1,10 @@
+3.1.37.6
+--------
+* Fix crash when starting content in third-party player
+* Fix crash when starting content when both Ace Stream Media and Ace Stream Engine apps are installed
+* Fix crash during channels setup on Android TV
+* Fix crash when opening player settings on Android TV
+
 3.1.37.5
 --------
 * Fixed some crashes

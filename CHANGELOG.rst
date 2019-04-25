@@ -1,3 +1,13 @@
+3.1.37.8
+--------
+* Changed app shutdown procedure: "quit" menu should now work on all devices
+* Fixed crashes on devices with missing WebView
+
+3.1.37.7
+--------
+* Fixed crash caused by seekbar inflate error (on old Android devices)
+* Fixed crash when starting P2P content in external player (on some devices)
+
 3.1.37.6
 --------
 * Fix crash when starting content in third-party player

@@ -45,7 +45,8 @@ ext {
     admobUseTestAds = "false"
     admobUseTestDevices = "false"
     appodealUseTestAds = "false"
-    enableDebugLogging = "false"
+    //tmp: change to "false" later
+    enableDebugLogging = "true"
     useTestBackend = "false"
     allowExternalPlayers = "true"
     playServicesVersion = '16.1.2'
@@ -75,8 +76,8 @@ ext {
     okHttpVersion = '3.11.0'
     //
 
-    versionName = '3.1.37.8'
-    versionCode = 301370800
+    versionName = '3.1.37.9'
+    versionCode = 301370900
     //            MNNRRSSPA
     // versionCode scheme is M NN RR A
     // M:  Major version from 0 to 9 (engine)

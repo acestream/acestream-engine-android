@@ -1,3 +1,8 @@
+3.1.37.9
+--------
+* Fixed screen orientation preference
+* Bug fixes
+
 3.1.37.8
 --------
 * Changed app shutdown procedure: "quit" menu should now work on all devices

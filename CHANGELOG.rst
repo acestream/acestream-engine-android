@@ -1,3 +1,8 @@
+3.1.41.0
+--------
+* Fix some issues with authorization
+* Optimizations in broadcast stability
+
 3.1.37.9
 --------
 * Fixed screen orientation preference

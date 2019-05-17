@@ -1,4 +1,4 @@
-3.1.41.0
+3.1.41.1
 --------
 * Fix some issues with authorization
 * Optimizations in broadcast stability

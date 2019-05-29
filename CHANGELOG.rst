@@ -1,4 +1,4 @@
-3.1.42.3
+3.1.42.4
 --------
 * Optimizations in engine
 * Added PollFish OfferWall mode

@@ -113,8 +113,8 @@ android {
             adMobRewardedVideoPrerollId: getLocalProperty('adMobRewardedVideoPrerollId_core_' + flavorTarget.name, ""),
             adMobRewardedVideoMainId: getLocalProperty('adMobRewardedVideoMainId_core_' + flavorTarget.name, ""),
             appodealAppKey: getLocalProperty('appodealAppKey_core_' + flavorTarget.name, ""),
-            moPubAdUnitId: getLocalProperty('moPubAdUnitId_media_' + flavorTarget.name, ""),
-            pollfishApiKey: getLocalProperty('pollfishApiKey_media_' + flavorTarget.name, ""),
+            moPubAdUnitId: getLocalProperty('moPubAdUnitId_core_' + flavorTarget.name, ""),
+            pollfishApiKey: getLocalProperty('pollfishApiKey_core_' + flavorTarget.name, ""),
         ]
 
         def generatedCode = defaultConfig.versionCode + 10 + flavorArch.versionCode

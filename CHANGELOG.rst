@@ -1,3 +1,10 @@
+3.1.42.3
+--------
+* Optimizations in engine
+* Added PollFish OfferWall mode
+* Fix to prevent "Context.startForegroundService() did not then call Service.startForeground()" on some devices
+* Some other top crashes are fixed
+
 3.1.41.1
 --------
 * Fix some issues with authorization

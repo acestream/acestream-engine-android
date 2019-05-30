@@ -1,3 +1,7 @@
+3.1.42.6
+--------
+* Fix crash when starting playback in Ace Player from notification
+
 3.1.42.4
 --------
 * Optimizations in engine

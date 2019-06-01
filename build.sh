@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./gradlew assembleRelease
+./gradlew clean assembleRelease

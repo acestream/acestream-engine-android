@@ -1,3 +1,7 @@
+3.1.43.0
+--------
+* Fixed issues with third-party app integration
+
 3.1.42.8
 --------
 * Fix issue with subscriptions

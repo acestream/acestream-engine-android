@@ -1,3 +1,7 @@
+3.1.44.1
+--------
+* Fixed several bugs leading to crashes
+
 3.1.44.0
 --------
 * Fixed more issues with third-party app integration

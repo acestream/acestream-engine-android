@@ -1,3 +1,8 @@
+3.1.45.0
+--------
+* Fixed crashes of rewarded ads
+* Fixed integration bugs
+
 3.1.44.1
 --------
 * Fixed several bugs leading to crashes

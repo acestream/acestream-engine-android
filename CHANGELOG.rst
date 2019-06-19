@@ -1,3 +1,8 @@
+3.1.45.1
+--------
+* Fixed playback of HLS broadcasts in "HLS" or "Original" output format in Ace Player
+* Try to restore audio volume if it was reset by mistake
+
 3.1.45.0
 --------
 * Fixed crashes of rewarded ads

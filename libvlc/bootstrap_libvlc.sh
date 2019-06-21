@@ -10,7 +10,7 @@ if [ ! -f ${ROOT}/releases/latest/libvlc.aar ]; then
     mkdir -p ${ROOT}/releases/latest
     cd ${ROOT}/releases/latest
 
-    wget http://acestream.org/downloads/bintray/android/libvlc/libvlc-all-3.1.5.aar -O libvlc.aar
+    wget http://acestream.org/downloads/bintray/android/libvlc/libvlc-all-3.2-eap3.aar -O libvlc.aar
 fi
 
 echo "libvlc bootstrap done"

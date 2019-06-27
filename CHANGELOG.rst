@@ -1,3 +1,14 @@
+3.1.46.0
+--------
+* Added "lock" button
+* "Info" button moved to bottom panel
+* Fixed AceCast bug (playback was stopped when remote control is reconnected while player is paused)
+
+3.1.45.3
+--------
+* Added ability to remember player from notification
+* Added "info" button to player (show P2P info)
+
 3.1.45.2
 --------
 * Use latest stable LibVLC

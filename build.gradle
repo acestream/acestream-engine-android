@@ -76,8 +76,8 @@ ext {
     okHttpVersion = '3.11.0'
     //
 
-    versionName = '3.1.45.2'
-    versionCode = 301450200
+    versionName = '3.1.46.0'
+    versionCode = 301460000
     //            MNNRRSSPA
     // versionCode scheme is M NN RR A
     // M:  Major version from 0 to 9 (engine)

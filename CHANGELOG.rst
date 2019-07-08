@@ -1,3 +1,8 @@
+3.1.48.0
+--------
+* Removed debug logging from engine
+* Fixed issues in HLS downloader module
+
 3.1.47.3
 --------
 * A major optimization of connections handling module is done, which is aimed at improving the stability of the stream during playback

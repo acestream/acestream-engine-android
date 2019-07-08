@@ -1,3 +1,11 @@
+3.1.47.3
+--------
+* A major optimization of connections handling module is done, which is aimed at improving the stability of the stream during playback
+* Fixed bug in engine which caused speed drop and stopping of playback after some time of watching broadcast
+* Fixed problem in LibVLC HLS module, which caused unexpected player closing during playback
+* Fixed bug: engine failed to start when main port was busy
+* Fixed bug (possible crash in player since 3.1.46.0)
+
 3.1.46.0
 --------
 * Added "lock" button

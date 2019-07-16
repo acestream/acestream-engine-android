@@ -1,3 +1,8 @@
+3.1.50.1
+--------
+* Fix playlist sorting issue over AceCast
+* Update current playlist item style
+
 3.1.50.0
 --------
 * Fix bug in disk storage module for HLS

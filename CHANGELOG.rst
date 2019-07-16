@@ -1,3 +1,8 @@
+3.1.50.0
+--------
+* Fix bug in disk storage module for HLS
+* Fix handling multi-file torrent from third-party apps
+
 3.1.48.0
 --------
 * Removed debug logging from engine

@@ -1,3 +1,9 @@
+3.1.51.0
+--------
+* Fix crash in login screen
+* Fixed several issues with playing HLS streams
+* Fixed multicast peer exchange
+
 3.1.50.1
 --------
 * Fix playlist sorting issue over AceCast
